@@ -1,5 +1,6 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
+import React from 'react';
+import Image from 'next/image';
+import styles from './page.module.scss';
 
 export default function Home() {
   return (
@@ -12,8 +13,10 @@ export default function Home() {
         className={styles.hand}
       />
       <div className={styles.content}>
-        <p className={styles.headline}>Who wants to be a millionaire?</p>
-        <button className={styles.primary}>Start</button>
+        <p className={styles.headline}>Who wants to be a millionaire?</p>
+        <button className={styles.primary} type="button">
+          Start
+        </button>
       </div>
     </main>
   );
