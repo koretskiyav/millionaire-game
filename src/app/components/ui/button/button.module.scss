@@ -1,0 +1,13 @@
+@import '../../../../styles/colors';
+
+.primary {
+  width: 296px;
+  height: 64px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 116%;
+  background-color: $orange-100;
+  color: $white-100;
+}
