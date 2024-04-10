@@ -3,6 +3,18 @@
 .option {
   display: flex;
   align-items: center;
+
+  &:hover {
+    .button,
+    .button::before,
+    .button::after {
+      border-color: $orange-100;
+    }
+
+    .line {
+      background-color: $orange-100;
+    }
+  }
 }
 
 .button {

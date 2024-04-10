@@ -10,4 +10,12 @@
   line-height: 116%;
   background-color: $orange-100;
   color: $white-100;
+
+  &:hover {
+    background-color: $orange-80;
+  }
+
+  &:active {
+    background-color: $orange-120;
+  }
 }
