@@ -1,0 +1,25 @@
+@import '../../styles/colors';
+
+.main {
+  display: flex;
+}
+
+.board {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: $black-5;
+}
+
+.side {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  height: 100vh;
+  background-color: $white-100;
+}
