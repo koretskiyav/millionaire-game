@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 import questions from '../questions.json';
 import Gain from '../components/ui/gain/gain';
+import Option from '../components/ui/option/option';
 
 export default function Game() {
   const [currentInd, setCurrentInd] = useState(0);
@@ -29,11 +30,21 @@ export default function Game() {
     <main className={styles.main}>
       <div className={styles.board}>
         <div>{question}</div>
-        <div>
+        <div className={styles.options}>
           {answers.map((answer, ind) => (
-            <button type="button" key={answer} onClick={() => onAnswer(ind)}>
-              {answer}
-            </button>
+            <Option
+              key={answer}
+              option={ind}
+              onSelect={onAnswer}
+              answer={answer}
+              variant={(() => {
+                // TODO add real logic here
+                if (ind % 4 === 0) return 'default';
+                if (ind % 4 === 1) return 'correct';
+                if (ind % 4 === 2) return 'selected';
+                return 'wrong';
+              })()}
+            />
           ))}
         </div>
       </div>

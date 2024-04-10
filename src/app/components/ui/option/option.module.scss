@@ -1,0 +1,109 @@
+@import '../../../../styles/colors';
+
+.option {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 310px;
+  width: 310px;
+  height: 72px;
+  margin: 4px 34px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 116%;
+  border: 1px solid $black-40;
+  border-radius: 3px;
+  border-left: none;
+  border-right: none;
+  color: $black-100;
+
+  b {
+    z-index: 1;
+    margin: 0 8px;
+    color: $orange-100;
+    font-weight: 600;
+  }
+
+  span {
+    z-index: 1;
+  }
+
+  &.default,
+  &.default::before,
+  &.default::after {
+    border-color: $black-40;
+    background-color: $white-100;
+  }
+
+  &.selected,
+  &.selected::before,
+  &.selected::after {
+    border-color: $orange-100;
+    background-color: $orange-5;
+  }
+
+  &.correct,
+  &.correct::before,
+  &.correct::after {
+    border-color: $green-100;
+    background-color: $green-5;
+  }
+
+  &.wrong,
+  &.wrong::before,
+  &.wrong::after {
+    border-color: $red-100;
+    background-color: $red-5;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    rotate: 45deg;
+    width: 51px;
+    height: 51px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid $black-40;
+  }
+
+  &::before {
+    left: -24px;
+    border-top: none;
+    border-right: none;
+  }
+
+  &::after {
+    right: -24px;
+    border-bottom: none;
+    border-left: none;
+  }
+}
+
+.line {
+  height: 1px;
+  width: 17px;
+
+  &.default {
+    background-color: $black-40;
+  }
+
+  &.selected {
+    background-color: $orange-100;
+  }
+
+  &.correct {
+    background-color: $green-100;
+  }
+
+  &.wrong {
+    background-color: $red-100;
+  }
+}
