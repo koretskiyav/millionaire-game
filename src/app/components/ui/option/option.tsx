@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './option.module.scss';
 import { OptionVariant } from './types';
-import { getLetter } from './utils';
+import { getFontSize, getLetter } from './utils';
 
 interface OptionProps {
   option: number;
@@ -24,6 +24,7 @@ export default function Option({
         type="button"
         className={clsx(styles.button, styles[variant])}
         onClick={() => onSelect(option)}
+        style={{ fontSize: getFontSize(answer) }}
       >
         <b>{getLetter(option)}</b>
         <span>{answer}</span>

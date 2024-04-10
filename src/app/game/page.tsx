@@ -1,30 +1,16 @@
 'use client';
 
-import React, { useCallback, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
 import styles from './page.module.scss';
-import questions from '../questions.json';
 import Gain from '../components/ui/gain/gain';
 import Option from '../components/ui/option/option';
+import useGame from './useGame';
+import { getOptionVariant } from './utils';
 
 export default function Game() {
-  const [currentInd, setCurrentInd] = useState(0);
-  const router = useRouter();
-
-  const { question, answers, correct } = questions[currentInd];
-
-  const onAnswer = useCallback(
-    (answer: number) => {
-      if (!correct.includes(answer)) {
-        router.push(`/over?gain=${questions[currentInd - 1]?.gain || 0}`);
-      } else if (!questions[currentInd + 1]) {
-        router.push(`/over?gain=${questions[currentInd].gain}`);
-      } else {
-        setCurrentInd((ind) => ind + 1);
-      }
-    },
-    [correct, currentInd, router],
-  );
+  // eslint-disable-next-line object-curly-newline, operator-linebreak
+  const { currentInd, question, answers, selected, correct, gains, onSelect } =
+    useGame();
 
   return (
     <main className={styles.main}>
@@ -35,24 +21,18 @@ export default function Game() {
             <Option
               key={answer}
               option={ind}
-              onSelect={onAnswer}
+              onSelect={onSelect}
               answer={answer}
-              variant={(() => {
-                // TODO add real logic here
-                if (ind % 4 === 0) return 'default';
-                if (ind % 4 === 1) return 'correct';
-                if (ind % 4 === 2) return 'selected';
-                return 'wrong';
-              })()}
+              variant={getOptionVariant(ind, selected, correct)}
             />
           ))}
         </div>
       </div>
       <div className={styles.side}>
-        {questions.map((q, ind) => (
+        {gains.map((gain, ind) => (
           <Gain
-            key={q.gain}
-            gain={q.gain}
+            key={gain}
+            gain={gain}
             stage={Gain.getGainStage(ind, currentInd)}
           />
         ))}
