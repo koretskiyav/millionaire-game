@@ -16,25 +16,29 @@
     "question": "On a radio, stations are changed by using what control?",
     "answers": [
       "Tuning",
+      "Tuning again",
       "Volume",
+      "Volume once again",
       "Bass",
       "Treble"
     ],
     "correct": [
-      0
+      0,
+      1
     ],
     "gain": 1000
   },
   {
     "question": "Which material is most dense?",
     "answers": [
+      "Cupper",
       "Silver",
       "Styrofoam",
       "Butter",
       "Gold"
     ],
     "correct": [
-      3
+      4
     ],
     "gain": 2000
   },

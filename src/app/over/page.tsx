@@ -1,14 +1,14 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 import styles from './page.module.scss';
 import Button from '../components/ui/button/button';
 
-export default function Home() {
-  const params = useSearchParams();
-  const gain = params.get('gain') || 0;
+interface OverProps {
+  searchParams: Record<string, string | string[] | undefined>;
+}
+
+export default function Over({ searchParams }: OverProps) {
+  const { gain = 0 } = searchParams;
 
   return (
     <main className={styles.main}>
