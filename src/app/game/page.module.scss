@@ -7,17 +7,23 @@
 .board {
   display: flex;
   flex: 3;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   height: 100vh;
+  padding: 130px 80px;
   background-color: $black-5;
+}
+
+.question {
+  max-width: 600px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 116%;
 }
 
 .options {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .side {

@@ -15,7 +15,7 @@ export default function Game() {
   return (
     <main className={styles.main}>
       <div className={styles.board}>
-        <div>{question}</div>
+        <div className={styles.question}>{question}</div>
         <div className={styles.options}>
           {answers.map((answer, ind) => (
             <Option
