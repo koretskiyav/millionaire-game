@@ -4,6 +4,7 @@ import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 import questions from '../questions.json';
+import Gain from '../components/ui/gain/gain';
 
 export default function Game() {
   const [currentInd, setCurrentInd] = useState(0);
@@ -38,10 +39,11 @@ export default function Game() {
       </div>
       <div className={styles.side}>
         {questions.map((q, ind) => (
-          <div key={q.gain}>
-            {q.gain}
-            {ind === currentInd ? ' *' : ''}
-          </div>
+          <Gain
+            key={q.gain}
+            gain={q.gain}
+            stage={Gain.getGainStage(ind, currentInd)}
+          />
         ))}
       </div>
     </main>
