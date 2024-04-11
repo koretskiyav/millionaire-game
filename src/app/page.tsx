@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.scss';
-import Button from './components/ui/button/button';
+import Button from '../components/ui/button/button';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       />
       <div className={styles.content}>
         <p className={styles.headline}>Who wants to be a millionaire?</p>
-        <Button primary>
+        <Button>
           <Link href="/game">Start</Link>
         </Button>
       </div>

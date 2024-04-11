@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import questions from '../questions.json';
+import questions from '../../questions.json';
 import { sleep } from './utils';
 
 const WAIT_FOR_ANSWER_TIMEOUT = 1000; // ms
-const WAIT_FOR_NEXT_STEP_TIMEOUT = 1000; // ms
+const WAIT_FOR_NEXT_STEP_TIMEOUT = 1500; // ms
 
 export default function useGame() {
   const [currentInd, setCurrentInd] = useState(0);

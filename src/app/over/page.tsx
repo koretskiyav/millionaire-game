@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.scss';
-import Button from '../components/ui/button/button';
-import { formatGain } from '../components/ui/gain/utils';
+import Button from '../../components/ui/button/button';
+import { formatGain } from '../../components/ui/gain/utils';
 
 interface OverProps {
   searchParams: Record<string, string | string[] | undefined>;
@@ -30,7 +30,7 @@ export default function Over({ searchParams }: OverProps) {
             {' earned'}
           </p>
         </div>
-        <Button primary>
+        <Button>
           <Link href="/game">Try again</Link>
         </Button>
       </div>

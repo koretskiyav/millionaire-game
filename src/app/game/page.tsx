@@ -2,8 +2,8 @@
 
 import React from 'react';
 import styles from './page.module.scss';
-import Gain from '../components/ui/gain/gain';
-import Option from '../components/ui/option/option';
+import Gain from '../../components/ui/gain/gain';
+import Option from '../../components/ui/option/option';
 import useGame from './useGame';
 import { getOptionVariant } from './utils';
 

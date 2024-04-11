@@ -1,4 +1,4 @@
-import { OptionVariant } from '../components/ui/option/types';
+import { OptionVariant } from '../../components/ui/option/types';
 
 export async function sleep(ms: number) {
   return new Promise((res) => {
