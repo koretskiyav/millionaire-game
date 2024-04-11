@@ -5,13 +5,22 @@
 }
 
 .board {
+  position: relative;
   display: flex;
   flex: 3;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  padding: 130px 80px;
+  padding: 10vw 6vw;
   background-color: $black-5;
+}
+
+.menu {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  top: 24px;
+  right: 24px;
 }
 
 .question {
@@ -34,4 +43,38 @@
   justify-content: center;
   height: 100vh;
   background-color: $white-100;
+}
+
+@media (max-width: 800px) {
+  .board {
+    align-items: center;
+    justify-content: space-around;
+    padding: 10vw 0;
+  }
+
+  .question {
+    max-width: 90vw;
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  .options {
+    justify-content: center;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .side {
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    transition: 0.5s all ease-in-out;
+    transform: translateY(-100%);
+
+    &.open {
+      transform: translateY(0);
+    }
+  }
 }

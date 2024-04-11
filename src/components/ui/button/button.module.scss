@@ -1,7 +1,8 @@
 @import '../../../styles/colors';
 
 .button {
-  width: 296px;
+  width: 100%;
+  max-width: 296px;
   height: 64px;
   border-radius: 12px;
   border: none;
