@@ -16,8 +16,10 @@ export default function Home() {
         className={styles.hand}
       />
       <div className={styles.content}>
-        <p className={styles.headline}>Who wants to be a millionaire?</p>
-        <Button>
+        <p data-testid="headline" className={styles.headline}>
+          Who wants to be a millionaire?
+        </p>
+        <Button testId="start-button">
           <Link href="/game">Start</Link>
         </Button>
       </div>
