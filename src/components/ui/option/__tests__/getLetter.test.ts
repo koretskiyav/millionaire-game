@@ -11,6 +11,6 @@ describe('getLetter', () => {
   });
 
   test('should get Z for 25 index', async () => {
-    expect(getLetter(25)).toBe('ZZ');
+    expect(getLetter(25)).toBe('Z');
   });
 });
