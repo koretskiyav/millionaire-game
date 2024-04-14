@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { NavButton } from '@/components/ui';
+import { NavButton, formatGain } from '@/components/ui';
 import styles from './page.module.scss';
-import { formatGain } from '../../components/ui/gain/utils';
 
 interface OverProps {
   searchParams: Record<string, string | string[] | undefined>;
