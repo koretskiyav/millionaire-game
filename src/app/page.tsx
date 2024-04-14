@@ -1,8 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.scss';
-import Button from '../components/ui/button/button';
+import NavButton from '../components/ui/nav-button/nav-button';
 
 export default function Home() {
   return (
@@ -19,9 +18,7 @@ export default function Home() {
         <p data-testid="headline" className={styles.headline}>
           Who wants to be a millionaire?
         </p>
-        <Button testId="start-button">
-          <Link href="/game">Start</Link>
-        </Button>
+        <NavButton href="/game" text="Start" testId="start-button" />
       </div>
     </main>
   );

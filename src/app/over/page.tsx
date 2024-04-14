@@ -1,8 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.scss';
-import Button from '../../components/ui/button/button';
+import NavButton from '../../components/ui/nav-button/nav-button';
 import { formatGain } from '../../components/ui/gain/utils';
 
 interface OverProps {
@@ -30,9 +29,7 @@ export default function Over({ searchParams }: OverProps) {
             {' earned'}
           </p>
         </div>
-        <Button>
-          <Link href="/game">Try again</Link>
-        </Button>
+        <NavButton href="/game" text="Try again" />
       </div>
     </main>
   );
