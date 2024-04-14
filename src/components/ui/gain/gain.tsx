@@ -9,7 +9,7 @@ interface GainProps {
   stage: GainStage;
 }
 
-export default function Gain({ gain, stage }: GainProps) {
+export function Gain({ gain, stage }: GainProps) {
   return (
     <div className={styles.gain}>
       <div className={clsx(styles.line, styles[stage])} />

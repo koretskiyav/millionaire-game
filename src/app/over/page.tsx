@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import { NavButton } from '@/components/ui';
 import styles from './page.module.scss';
-import NavButton from '../../components/ui/nav-button/nav-button';
 import { formatGain } from '../../components/ui/gain/utils';
 
 interface OverProps {

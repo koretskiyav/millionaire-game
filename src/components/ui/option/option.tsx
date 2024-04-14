@@ -11,12 +11,7 @@ interface OptionProps {
   onSelect: (key: number) => void;
 }
 
-export default function Option({
-  option,
-  answer,
-  variant,
-  onSelect,
-}: OptionProps) {
+export function Option({ option, answer, variant, onSelect }: OptionProps) {
   return (
     <div className={styles.option}>
       <div className={clsx(styles.line, styles[variant])} />

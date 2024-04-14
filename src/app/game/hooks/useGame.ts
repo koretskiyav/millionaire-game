@@ -1,12 +1,17 @@
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import questions from '../../questions.json';
-import { sleep } from './utils';
+import questions from '../../../questions.json';
 
-const WAIT_FOR_ANSWER_TIMEOUT = 1000; // ms
-const WAIT_FOR_NEXT_STEP_TIMEOUT = 1500; // ms
+const WAIT_FOR_ANSWER_TIMEOUT = 500; // ms
+const WAIT_FOR_NEXT_STEP_TIMEOUT = 1000; // ms
 
-export default function useGame() {
+async function sleep(ms: number) {
+  return new Promise((res) => {
+    setTimeout(res, ms);
+  });
+}
+
+export function useGame() {
   const [currentInd, setCurrentInd] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);

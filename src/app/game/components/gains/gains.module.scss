@@ -1,0 +1,37 @@
+@import '@/styles/colors';
+
+.menu {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  top: 24px;
+  right: 24px;
+}
+
+.gains {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  height: 100dvh;
+  background-color: $white-100;
+}
+
+@media (max-width: 800px) {
+  .menu {
+    display: block;
+  }
+
+  .gains {
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    transition: 0.3s all ease-in-out;
+    transform: translateX(100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}

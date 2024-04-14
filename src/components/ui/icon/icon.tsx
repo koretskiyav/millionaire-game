@@ -6,7 +6,7 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-export default function Icon({ name, onClick }: ButtonProps) {
+export function Icon({ name, onClick }: ButtonProps) {
   return (
     <Image
       src={`/${name}.svg`}
