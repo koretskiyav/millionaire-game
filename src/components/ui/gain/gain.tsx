@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './gain.module.scss';
-import { formatGain, getGainStage } from './utils';
+import { formatGain } from './utils';
 import { GainStage } from './types';
 
 interface GainProps {
@@ -20,5 +20,3 @@ export default function Gain({ gain, stage }: GainProps) {
     </div>
   );
 }
-
-Gain.getGainStage = getGainStage;

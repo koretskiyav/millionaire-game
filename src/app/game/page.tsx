@@ -7,7 +7,7 @@ import styles from './page.module.scss';
 import Gain from '../../components/ui/gain/gain';
 import Option from '../../components/ui/option/option';
 import useGame from './useGame';
-import { getOptionVariant } from './utils';
+import { getGainStage, getOptionVariant } from './utils';
 import useMenu from './useMenu';
 
 export default function Game() {
@@ -41,11 +41,7 @@ export default function Game() {
           <Icon name="close" onClick={closeMenu} />
         </div>
         {gains.map((gain, ind) => (
-          <Gain
-            key={gain}
-            gain={gain}
-            stage={Gain.getGainStage(ind, currentInd)}
-          />
+          <Gain key={gain} gain={gain} stage={getGainStage(ind, currentInd)} />
         ))}
       </div>
     </main>

@@ -1,4 +1,5 @@
 import { OptionVariant } from '../../components/ui/option/types';
+import { GainStage } from '../../components/ui/gain/types';
 
 export async function sleep(ms: number) {
   return new Promise((res) => {
@@ -18,4 +19,10 @@ export function getOptionVariant(
   }
   if (ind === selected) return 'selected';
   return 'default';
+}
+
+export function getGainStage(gainInd: number, currentInd: number): GainStage {
+  if (gainInd === currentInd) return 'current';
+  if (gainInd > currentInd) return 'upcoming';
+  return 'passed';
 }
