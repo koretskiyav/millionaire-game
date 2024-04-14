@@ -10,7 +10,7 @@ interface NavButtonProps {
 
 export default function NavButton({ href, text, testId }: NavButtonProps) {
   return (
-    <Link href={href}>
+    <Link className={styles.link} href={href}>
       <button className={styles.button} type="button" data-testid={testId}>
         {text}
       </button>
